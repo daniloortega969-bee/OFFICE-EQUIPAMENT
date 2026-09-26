@@ -1,0 +1,798 @@
+/* =========================================================
+   INVENTARIO DE EQUIPOS OFIMÁTICOS
+   DISEÑO GENERAL
+   ========================================================= */
+
+:root {
+    --color-principal: #2563eb;
+    --color-principal-hover: #1d4ed8;
+    --color-texto: #1f2937;
+    --color-texto-suave: #64748b;
+    --color-fondo: #f1f5f9;
+    --color-card: #ffffff;
+    --color-borde: #e2e8f0;
+    --color-tabla: #1e293b;
+    --radio: 12px;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+    font-size: 16px;
+}
+
+body.bg-light {
+    background: var(--color-fondo) !important;
+    color: var(--color-texto);
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Contenedor principal */
+
+.container {
+    max-width: 1400px;
+}
+
+/* Título principal */
+
+.container > h1 {
+    color: #172033;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================================================
+   TARJETAS GENERALES
+   ========================================================= */
+
+.card {
+    background: var(--color-card);
+    border: 1px solid var(--color-borde) !important;
+    border-radius: var(--radio) !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06) !important;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.card-title {
+    color: var(--color-texto);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* =========================================================
+   MENÚ PRINCIPAL
+   ========================================================= */
+
+.container > .card.mb-4.shadow-sm {
+    border-radius: 14px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07) !important;
+}
+
+.container > .card.mb-4.shadow-sm .card-body {
+    padding: 7px !important;
+}
+
+.nav-pills {
+    gap: 5px;
+}
+
+.nav-pills .nav-item {
+    flex: 1;
+}
+
+.nav-pills .nav-link {
+    background: transparent !important;
+    color: #64748b !important;
+    border-radius: 9px !important;
+    padding: 11px 14px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.nav-pills .nav-link i {
+    margin-right: 6px;
+}
+
+.nav-pills .nav-link:hover {
+    background: #eff6ff !important;
+    color: var(--color-principal) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.12);
+}
+
+.nav-pills .nav-link.active {
+    background: var(--color-principal) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.22);
+}
+
+.nav-pills .nav-link.active:hover {
+    background: var(--color-principal-hover) !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   TARJETAS DE ESTADOS
+   ========================================================= */
+
+#resumenEstados {
+    align-items: stretch;
+}
+
+#resumenEstados > div {
+    display: flex;
+}
+
+#resumenEstados .card {
+    width: 100%;
+    min-height: 145px;
+    border: none !important;
+    border-radius: 14px !important;
+    overflow: hidden;
+    color: #ffffff;
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.12) !important;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#resumenEstados .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.17) !important;
+}
+
+#resumenEstados .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px !important;
+}
+
+#resumenEstados .card i {
+    font-size: 1.9rem !important;
+    margin-bottom: 7px;
+}
+
+#resumenEstados .card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+#resumenEstados .card small {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Colores de las tarjetas */
+
+#resumenEstados .bg-success {
+    background: linear-gradient(135deg, #198754, #22a06b) !important;
+}
+
+#resumenEstados .bg-warning {
+    background: linear-gradient(135deg, #d99a00, #f0b429) !important;
+}
+
+#resumenEstados .bg-primary {
+    background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+}
+
+#resumenEstados .bg-danger {
+    background: linear-gradient(135deg, #dc3545, #ef5364) !important;
+}
+
+#resumenEstados .bg-secondary {
+    background: linear-gradient(135deg, #64748b, #7c8798) !important;
+}
+
+/* =========================================================
+   BÚSQUEDA Y FILTROS
+   ========================================================= */
+
+#equipos > .card.mb-4 {
+    border-radius: 14px !important;
+}
+
+#equipos > .card.mb-4 .card-body {
+    padding: 20px !important;
+}
+
+#equipos > .card.mb-4 .card-title {
+    margin-bottom: 16px;
+    color: #334155;
+    font-size: 1.05rem;
+    font-weight: 650;
+}
+
+.form-control,
+.form-select {
+    min-height: 42px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px !important;
+    color: #334155;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#btnBuscar {
+    min-height: 42px;
+    border-radius: 8px !important;
+    font-weight: 600;
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn {
+    border-radius: 8px !important;
+    font-size: 0.93rem;
+    font-weight: 500;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--color-principal);
+    border-color: var(--color-principal);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-principal-hover);
+    border-color: var(--color-principal-hover);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================================================
+   TABLA DE EQUIPOS
+   ========================================================= */
+
+#equipos > .card.shadow-sm:last-child {
+    border-radius: 14px !important;
+    overflow: hidden;
+}
+
+#equipos > .card.shadow-sm:last-child .card-body {
+    padding: 10px !important;
+}
+
+.table {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.table thead th {
+    background: var(--color-tabla) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 13px 12px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 13px 12px;
+    border-color: #e5e7eb;
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fbff !important;
+}
+
+/* Botones de acciones */
+
+#tablaEquipos .btn,
+#tablaMantenimientos .btn {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================================
+   ESTADOS DENTRO DE LA TABLA
+   ========================================================= */
+
+.estado-disponible {
+    background-color: #d1fae5;
+    color: #047857;
+}
+
+.estado-prestado {
+    background-color: #fef3c7;
+    color: #a16207;
+}
+
+.estado-mantenimiento {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.estado-baja {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.estado-enuso {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.estado-disponible,
+.estado-prestado,
+.estado-mantenimiento,
+.estado-baja,
+.estado-enuso {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* =========================================================
+   HISTORIAL
+   ========================================================= */
+
+#movimientos .card {
+    border-radius: 14px !important;
+}
+
+#movimientos .card-body {
+    padding: 18px !important;
+}
+
+#movimientos .card-title {
+    color: #334155;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+#tablaMovimientos thead th {
+    background: var(--color-tabla) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+#tablaMovimientos tbody td {
+    padding: 13px 12px;
+    border-color: #e5e7eb;
+    vertical-align: middle;
+}
+
+#tablaMovimientos tbody tr:hover {
+    background-color: #f8fbff !important;
+}
+
+#tablaMovimientos tbody td:last-child {
+    color: #64748b;
+    font-size: 0.92rem;
+}
+
+/* =========================================================
+   MANTENIMIENTOS
+   ========================================================= */
+
+#mantenimientos > .d-flex {
+    margin-bottom: 18px !important;
+}
+
+#mantenimientos > .d-flex h4 {
+    color: #172033;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+#mantenimientos .card {
+    border-radius: 14px !important;
+}
+
+#mantenimientos .card-body {
+    padding: 10px !important;
+}
+
+#tablaMantenimientos thead th {
+    background: var(--color-tabla) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+#tablaMantenimientos tbody td {
+    padding: 13px 12px;
+    border-color: #e5e7eb;
+    vertical-align: middle;
+}
+
+#tablaMantenimientos tbody tr:hover {
+    background-color: #f8fbff !important;
+}
+
+#mantenimientos > .d-flex .btn-primary {
+    padding: 9px 16px;
+}
+
+/* =========================================================
+   ADMINISTRACIÓN
+   ========================================================= */
+
+#administracion > h4 {
+    color: #172033;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 18px !important;
+}
+
+#administracion .card {
+    border-radius: 14px !important;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#administracion .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.09) !important;
+}
+
+#administracion .card-header {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 16px;
+}
+
+#administracion .card-header h5 {
+    color: #334155;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#administracion .card-body {
+    padding: 16px;
+}
+
+#administracion .list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 11px 5px;
+    font-size: 0.95rem;
+    transition: background-color 0.15s ease;
+}
+
+#administracion .list-group-item:hover {
+    background-color: #f0f6ff;
+}
+
+/* =========================================================
+   MODALES
+   ========================================================= */
+
+.modal-content {
+    border: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.2);
+}
+
+.modal-header {
+    padding: 17px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title {
+    color: #172033;
+    font-weight: 650;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 14px 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .container > h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav-pills {
+        gap: 3px;
+    }
+
+    .nav-pills .nav-link {
+        padding: 10px 6px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .nav-pills .nav-link i {
+        display: block;
+        margin: 0 0 3px;
+    }
+
+    #resumenEstados > div {
+        width: 50%;
+    }
+}
+/* ===== AJUSTE DE TAMAÑO DE TEXTO ===== */
+
+/* Menú */
+.nav-pills .nav-link {
+    font-size: 1.05rem !important;
+}
+
+/* Botones */
+.btn {
+    font-size: 1rem !important;
+}
+
+/* Títulos de secciones */
+#equipos .card-title,
+#movimientos .card-title {
+    font-size: 1.2rem;
+}
+
+#mantenimientos > .d-flex h4,
+#administracion > h4 {
+    font-size: 1.45rem;
+}
+
+/* Filtros */
+#equipos .form-control,
+#equipos .form-select {
+    font-size: 1rem;
+}
+
+/* Tabla */
+.table {
+    font-size: 1.02rem;
+}
+
+.table thead th {
+    font-size: 0.95rem;
+}
+
+.table tbody td {
+    font-size: 1rem;
+}
+
+/* Estados */
+.estado-disponible,
+.estado-prestado,
+.estado-mantenimiento,
+.estado-baja,
+.estado-enuso {
+    font-size: 0.88rem;
+}
+
+/* Tarjetas de resumen */
+#resumenEstados .card h3 {
+    font-size: 1.9rem;
+}
+
+#resumenEstados .card small {
+    font-size: 0.98rem;
+}
+body.bg-light {
+    background-color: #d5dde8 !important;
+}
+
+/* ===== MODAL EQUIPO - DISEÑO VISIBLE ===== */
+
+#modalEquipo .modal-content {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.30) !important;
+}
+
+/* Encabezado */
+#modalEquipo .modal-header {
+    background: #1e293b !important;
+    color: white !important;
+    padding: 20px 24px !important;
+    border: none !important;
+}
+
+#modalEquipo .modal-title {
+    color: white !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+/* Cuerpo */
+#modalEquipo .modal-body {
+    background: #ffffff !important;
+    padding: 28px !important;
+}
+
+/* Etiquetas */
+#modalEquipo .form-label {
+    color: #334155 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 7px !important;
+}
+
+/* Campos */
+#modalEquipo .form-control,
+#modalEquipo .form-select {
+    min-height: 46px !important;
+    font-size: 1rem !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 9px !important;
+    padding: 9px 13px !important;
+}
+
+/* Focus */
+#modalEquipo .form-control:focus,
+#modalEquipo .form-select:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Observaciones */
+#modalEquipo textarea {
+    min-height: 90px !important;
+}
+
+/* Footer */
+#modalEquipo .modal-footer {
+    background: #f8fafc !important;
+    padding: 16px 24px !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Botones */
+#modalEquipo .modal-footer .btn {
+    min-width: 110px !important;
+    min-height: 42px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 9px !important;
+}
+/* =========================================================
+   MODAL MANTENIMIENTO
+   ========================================================= */
+
+#modalMantenimiento .modal-content {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.30) !important;
+}
+
+/* Encabezado */
+
+#modalMantenimiento .modal-header {
+    background: #1e293b !important;
+    color: white !important;
+    padding: 20px 24px !important;
+    border: none !important;
+}
+
+#modalMantenimiento .modal-title {
+    color: white !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+/* Cuerpo */
+
+#modalMantenimiento .modal-body {
+    background: #ffffff !important;
+    padding: 28px !important;
+}
+
+/* Etiquetas */
+
+#modalMantenimiento .form-label {
+    color: #334155 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 7px !important;
+}
+
+/* Campos */
+
+#modalMantenimiento .form-control,
+#modalMantenimiento .form-select {
+    min-height: 46px !important;
+    font-size: 1rem !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 9px !important;
+    padding: 9px 13px !important;
+}
+
+/* Campos seleccionados */
+
+#modalMantenimiento .form-control:focus,
+#modalMantenimiento .form-select:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Textareas */
+
+#modalMantenimiento textarea {
+    min-height: 90px !important;
+    resize: vertical;
+}
+
+/* Footer */
+
+#modalMantenimiento .modal-footer {
+    background: #f8fafc !important;
+    padding: 16px 24px !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Botones */
+
+#modalMantenimiento .modal-footer .btn {
+    min-width: 110px !important;
+    min-height: 42px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 9px !important;
+}

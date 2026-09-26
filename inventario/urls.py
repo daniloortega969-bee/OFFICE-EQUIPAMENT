@@ -6,6 +6,7 @@ from .views import listar_categorias, listar_marcas, listar_ubicaciones, listar_
 router = DefaultRouter()
 router.register('equipos', views.EquipoViewSet, basename='equipo')
 router.register('movimientos', views.MovimientoViewSet, basename='movimiento')
+router.register('mantenimientos', views.MantenimientoViewSet, basename='mantenimiento')
 
 urlpatterns = [
     path('', include(router.urls)),
